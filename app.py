@@ -535,7 +535,7 @@ If any style reference conflicts with the SketchUp source geometry, always follo
 def health():
     return {
         "ok": True,
-        "version": "4.4.1",
+        "version": "4.5.0",
         "gemini_key": bool(os.getenv("GEMINI_API_KEY")),
         "openai_key": bool(os.getenv("OPENAI_API_KEY")),
         "gemini_model": os.getenv("GEMINI_IMAGE_MODEL","gemini-3.1-flash-image"),
