@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>有舍 AI 生圖｜帳戶與 LINE Pay 儲值</title>
+  <link rel="stylesheet" href="./css/ai-v45.css">
+</head>
+<body>
+  <header class="topbar">
+    <a href="./index.html" class="back">← 回有舍空間設計</a>
+    <div>
+      <strong>有舍空間設計 AI 生圖</strong>
+      <small>v4.5.0 · LINE Pay Production Portal</small>
+    </div>
+    <span id="apiState" class="api-state">檢查 Backend…</span>
+  </header>
+
+  <main class="shell">
+    <section class="hero-card">
+      <div>
+        <span class="eyebrow">YUSHE AI VISUALIZATION STUDIO</span>
+        <h1>帳戶、點數與 LINE Pay 儲值</h1>
+        <p>網站與 SketchUp 插件共用同一套 v4.5 Backend。LINE Pay 實際付款確認成功後才會入點。</p>
+      </div>
+      <div class="points-card">
+        <small>可用點數</small>
+        <strong id="points">—</strong>
+        <span id="accountLabel">尚未登入</span>
+      </div>
+    </section>
+
+    <section id="loginPanel" class="panel">
+      <div class="panel-title">
+        <div>
+          <span class="step">01</span>
+          <h2>登入帳戶</h2>
+        </div>
+      </div>
+      <div class="login-row">
+        <input id="email" type="email" autocomplete="email" placeholder="Email">
+        <button id="loginBtn" class="primary">登入／建立帳戶</button>
+        <button id="logoutBtn" class="ghost" hidden>登出</button>
+      </div>
+      <p class="hint">目前 v4.5 沿用既有 Email 帳戶登入機制。正式公開營運前建議再升級 OTP／密碼驗證。</p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">
+        <div>
+          <span class="step">02</span>
+          <h2>選擇儲值方案</h2>
+        </div>
+        <button id="refreshBtn" class="ghost">重新整理</button>
+      </div>
+      <div id="plans" class="plans">
+        <div class="skeleton">讀取方案中…</div>
+      </div>
+    </section>
+
+    <section id="paymentPanel" class="panel payment-panel" hidden>
+      <div class="panel-title">
+        <div>
+          <span class="step">03</span>
+          <h2>LINE Pay 付款</h2>
+        </div>
+        <span id="paymentStatus" class="status waiting">等待建立訂單</span>
+      </div>
+
+      <div class="payment-grid">
+        <div class="qr-card">
+          <img id="qr" alt="LINE Pay 付款 QR Code">
+          <a id="payLink" class="linepay-btn" target="_blank" rel="noopener">以 LINE Pay 開啟付款</a>
+        </div>
+        <div class="order-card">
+          <dl>
+            <div><dt>訂單編號</dt><dd id="orderId">—</dd></div>
+            <div><dt>方案</dt><dd id="orderPlan">—</dd></div>
+            <div><dt>金額</dt><dd id="orderAmount">—</dd></div>
+            <div><dt>點數</dt><dd id="orderPoints">—</dd></div>
+          </dl>
+          <p class="security-note">
+            只有 LINE Pay Server 確認付款並完成 Confirm 後，Backend 才會原子性入點。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">
+        <div>
+          <span class="step">04</span>
+          <h2>最近儲值訂單</h2>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>訂單</th><th>方案</th><th>金額</th><th>點數</th><th>狀態</th></tr></thead>
+          <tbody id="ordersBody"><tr><td colspan="5">登入後顯示</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" hidden></div>
+  <script src="./js/v45-config.js"></script>
+  <script src="./js/v45-portal.js"></script>
+</body>
+</html>

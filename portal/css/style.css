@@ -1,0 +1,423 @@
+body {
+    font-family: "Microsoft JhengHei", Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #e5e5e5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 各區塊卡片樣式 */
+.service-item, .promise-section, .contact-section, .contact-info {
+    background-color: #f8f8f8;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* 封面區塊樣式 */
+.hero {
+    position: relative;
+    height: 100vh;
+    background-image: url('../imgs/cover.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #e5e5e5;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: white;
+}
+
+.hero-content {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-left: 10%;
+    margin-top: 15vh;
+    max-width: 500px;
+    text-align: left;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* 確保在手機版也能正確顯示 */
+@media (max-width: 768px) {
+    .hero {
+        background-size: contain;
+        height: 60vh;
+    }
+    
+    .hero-content {
+        margin-left: 5%;
+        margin-top: 10vh;
+        max-width: 90%;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+}
+
+/* 服務區塊樣式 */
+.services {
+    padding: 4rem 0;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-item {
+    text-align: center;
+    padding: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.service-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* 標題樣式 */
+h1, h2, h3 {
+    color: #333;
+}
+
+h2 {
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(to right, #555, #888);
+}
+
+/* 聯絡資訊區塊樣式 */
+.contact-info {
+    background-color: #f8f8f8;
+    border-top: none;
+    margin: 1rem auto;
+    padding: 1.5rem 2rem;
+    max-width: 900px;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.contact-info li {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info li strong {
+    margin-right: 15px;
+    width: 20px;
+    text-align: center;
+}
+
+.contact-info li strong i {
+    font-size: 1.2rem;
+    color: #444;
+}
+
+.contact-info a {
+    text-decoration: none;
+    color: #444;
+    transition: color 0.3s;
+}
+
+.contact-info a:hover {
+    color: #222;
+}
+
+.social-media {
+    display: inline-flex;
+    gap: 20px;
+}
+
+.social-media a {
+    text-decoration: none;
+    color: #444;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: all 0.3s;
+    background-color: #ebebeb;
+}
+
+.social-media a:hover {
+    background-color: #d5d5d5;
+    color: #222;
+}
+
+.social-media i {
+    font-size: 1.2rem;
+}
+
+/* 手機版調整 */
+@media (max-width: 768px) {
+    .contact-info {
+        margin: 1rem 1rem;
+        padding: 1rem;
+    }
+    
+    .contact-info ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+}
+
+/* 承諾區塊樣式 */
+.promise-section {
+    background: linear-gradient(to bottom, #f8f8f8, #f0f0f0);
+    padding: 2rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 1.5rem;
+}
+
+.promise-section h2 {
+    margin-bottom: 1.5rem;
+}
+
+.promise-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+
+/* 聯繫區塊樣式 */
+.contact-section {
+    background: linear-gradient(to bottom, #f8f8f8, #f0f0f0);
+    padding: 2rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 1.5rem auto;
+}
+
+.contact-section h2 {
+    margin-bottom: 1rem;
+}
+
+.contact-section p {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+/* 英文翻譯文字樣式 */
+.en-text {
+    display: block;
+    font-size: 0.6em;
+    color: #666;
+    font-weight: normal;
+    margin-top: 0.2em;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 在服務項目中的英文文字 */
+.service-item .en-text {
+    font-size: 0.55em;
+    margin-top: 0.15em;
+}
+
+/* 在 hero 區塊中的英文文字 */
+.hero-content .en-text {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.5em;
+    margin-top: 0.3em;
+}
+
+/* 手機版調整 */
+@media (max-width: 768px) {
+    .en-text {
+        font-size: 0.5em;
+    }
+}
+
+/* 專業區塊樣式 */
+.expertise-section {
+    text-align: center;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 1.5rem auto;
+    background: linear-gradient(to bottom, #f8f8f8, #f0f0f0);
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+}
+
+.expertise-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+    text-align: center;
+}
+
+.expertise-section li {
+    margin-bottom: 1.5rem;
+    padding: 0.5rem 0;
+}
+
+.expertise-section li strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* 調整英文標題在專業區塊中的樣式 */
+.expertise-section .en-text {
+    margin-top: 0.15em;
+    margin-bottom: 0.3em;
+}
+
+.expertise-section .en-text {
+    margin-top: 0.15em;
+    margin-bottom: 0.3em;
+}
+
+/* 諮詢小工具樣式 */
+.consultation-widget {
+    background: linear-gradient(to bottom, #f8f8f8, #f0f0f0);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.consultation-form {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #444;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #666;
+    outline: none;
+}
+
+.submit-btn {
+    background: linear-gradient(to right, #555, #666);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 手機版調整 */
+@media (max-width: 768px) {
+    .consultation-widget {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .submit-btn {
+        width: 100%;
+    }
+} 
+
+/* ===== 有舍 AI / LINE Pay v4.5 網站整合 ===== */
+.site-nav{
+    position:sticky;top:0;z-index:1000;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 5%;background:rgba(25,22,31,.94);
+    backdrop-filter:blur(12px);box-shadow:0 6px 24px rgba(0,0,0,.12);
+}
+.site-brand,.site-nav a{color:#fff;text-decoration:none}
+.site-brand{font-weight:800;letter-spacing:.08em}
+.site-nav-links{display:flex;align-items:center;gap:18px}
+.ai-nav-btn,.ai-primary-link{
+    display:inline-flex;align-items:center;justify-content:center;
+    padding:10px 16px;border-radius:10px;
+    background:linear-gradient(135deg,#6f49d8,#9a67ff);
+    color:white!important;text-decoration:none;font-weight:700;
+}
+.ai-service-section{
+    margin:2rem 0;padding:2rem;border-radius:16px;color:#fff;
+    background:linear-gradient(135deg,#21192e,#34234d 58%,#17121f);
+    box-shadow:0 14px 35px rgba(38,22,64,.18);
+}
+.ai-service-section h2{color:#fff;margin-top:.45rem}
+.ai-service-section h2:after{display:none}
+.ai-kicker{font-size:.75rem;text-transform:uppercase;letter-spacing:.14em;color:#c8b6f5}
+.ai-service-actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:1.2rem}
+.ai-version{font-size:.85rem;color:#baa9cb}
+@media(max-width:768px){
+    .site-nav{align-items:flex-start;gap:10px;flex-direction:column}
+    .site-nav-links{width:100%;justify-content:space-between;font-size:.9rem}
+}
